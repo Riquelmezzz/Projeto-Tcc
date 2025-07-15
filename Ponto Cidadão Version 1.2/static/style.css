@@ -4,14 +4,20 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #F2F2F2;
+    font-family: Arial, sans-serif;
+}
+
 .center {
     display: flex;
     flex-wrap: wrap;
 }
 
+/* HEADER */
 .about-header {
     width: 100%;
-    background-color: #639ac9;
+    background-color: #82B0D9;
 }
 
 a.about-header {
@@ -20,7 +26,7 @@ a.about-header {
 }
 
 header h2 span {
-    color: #639ac9;
+    color: #0455BF;
 }
 
 header h2 {
@@ -28,37 +34,51 @@ header h2 {
     color: #222;
 }
 
-.logo {
-    margin-top: 10px;
-    padding-left: 10px;
-}
-
 .wraper-header {
     padding: 25px 0;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    padding-left: 10px;
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.logo h2 {
+    margin-bottom: 8px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #222;
+    line-height: 1.4;
+    text-align: justify;
 }
 
 .banner-ads {
-    width: 60%;
-    height: 100px;
-    background-color: #222;
+    flex: 1 1 500px;
+    max-width: 100%;
+    height: 120px;
+    background-color: #0B6BBF;
     position: relative;
 }
 
-.banner-ads h2 {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-size: 15px;
-    font-style: italic;
-    color: white;
+.banner-ads img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
+/* MENU */
 .menu-main {
     width: 100%;
-    background-color: #0E2780;
+    background-color: #0455BF;
     padding: 8px;
 }
 
@@ -67,22 +87,31 @@ header h2 {
     margin: 0 10px;
     color: white;
     text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
 }
 
 .menu-main a:hover {
-    background-color: #5686af;
+    background-color: #347EBF;
+}
+
+/* NOTÍCIAS */
+
+.noticias-1 {
+    padding-bottom: 20px;
 }
 
 .noticias-wraper-1 {
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .noticia-destaque {
     width: 60%;
     padding-top: 20%;
-    background-color: #222;
-    border: 2px solid white;
+    background-color: #0B6BBF;
+    border: 2px solid #F2F2F2;
     position: relative;
 }
 
@@ -134,8 +163,8 @@ header h2 {
     padding-top: 30%;
     background-size: cover;
     background-position: center;
-    border: 2px solid white;
-    background-color: #222;
+    border: 2px solid #F2F2F2;
+    background-color: #347EBF;
     position: relative;
 }
 
@@ -145,51 +174,117 @@ header h2 {
 }
 
 
-/* Formulario da Pagína Denuncie */
+/* Parte final da página */
 
-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 800px;
-    width: 100%;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.campo {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-button {
-    margin-top: 10px;
-    padding: 12px;
-    font-size: 16px;
-    background: #007bff;
+footer {
+    background-color: #0455BF;
     color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 20px 10px;
+    text-align: center;
 }
 
-button:hover {
-    background: #0056b3;
+footer h1 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+footer .contato,
+footer .redes-sociais {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #82B0D9;
+}
+
+
+/* Jornal informativo */
+
+.container-geral {
+    width: 1450px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+/* Container com as 2 postagens */
+.conteudo-principal {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+/* Cada postagem */
+.postagem {
+    background-color: white;
+    flex: 1;
+}
+
+.post {
+    padding: 20px;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+}
+
+.data-post {
+    font-size: 0.8em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Barra lateral ajustada */
+
+.container-geral {
+    padding-bottom: 20px;
+}
+.barra-lateral {
+    width: 300px;
+}
+
+.conteudo-lateral {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.conteudo-lateral h3 {
+    background-color: #004aad;
+    color: white;
+    padding: 5px;
+}
+
+.post-destaque {
+    font-size: 0.8em;
+    padding: 5px;
+    border-bottom: 1px solid rgb(162, 154, 154);
+}
+
+.post-destaque:last-child {
+    border: none;
 }
 
 a {
     text-decoration: none;
+    font-weight: bold;
+    color: #004aad;
+}
+
+.post p {
+    margin: 10px 0;
+    text-indent: 20px;
+    text-align: justify;
 }
