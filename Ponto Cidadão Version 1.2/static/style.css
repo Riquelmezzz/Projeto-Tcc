@@ -7,31 +7,40 @@
 body {
     background-color: #F2F2F2;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
+/* O '.center' será usado para o cabeçalho e menu para manter o conteúdo mais centralizado em todas as telas */
 .center {
+    max-width: 1700px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
-/* HEADER */
+/* --- HEADER --- */
 .about-header {
     width: 100%;
     background-color: #82B0D9;
+    padding: 5px 0;
+    text-align: center;
 }
 
-a.about-header {
+.about-header a {
     color: white;
-    padding: 8px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+header h2 {
+    font-size: 2.2em;
+    color: #222;
+    margin-bottom: 5px;
 }
 
 header h2 span {
     color: #0455BF;
-}
-
-header h2 {
-    font-size: 35px;
-    color: #222;
 }
 
 .wraper-header {
@@ -45,17 +54,18 @@ header h2 {
 }
 
 .logo {
-    padding-left: 10px;
     flex: 1 1 300px;
     max-width: 400px;
+    padding-left: 10px;
 }
 
 .logo h2 {
     margin-bottom: 8px;
+    font-size: 1.8em;
 }
 
 .logo p {
-    font-size: 14px;
+    font-size: 0.9em;
     color: #222;
     line-height: 1.4;
     text-align: justify;
@@ -67,19 +77,22 @@ header h2 {
     height: 120px;
     background-color: #0B6BBF;
     position: relative;
+    overflow: hidden;
 }
 
 .banner-ads img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-/* MENU */
+/* --- MENU --- */
 .menu-main {
     width: 100%;
     background-color: #0455BF;
     padding: 8px;
+    text-align: center;
 }
 
 .menu-main a {
@@ -87,43 +100,50 @@ header h2 {
     margin: 0 10px;
     color: white;
     text-decoration: none;
-    padding: 6px 10px;
+    padding: 6px 12px;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .menu-main a:hover {
     background-color: #347EBF;
 }
 
-/* NOTÍCIAS */
-
+/* --- NOTÍCIAS --- */
 .noticias-1 {
     padding-bottom: 20px;
+    width: 100%;
 }
 
 .noticias-wraper-1 {
     display: flex;
-    width: 100%;
     flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
 }
 
 .noticia-destaque {
-    width: 60%;
-    padding-top: 20%;
+    flex: 1 1 100%;
+    padding-top: 60%;
     background-color: #0B6BBF;
     border: 2px solid #F2F2F2;
     position: relative;
+    overflow: hidden;
+    min-height: 200px;
 }
 
 .noticia-destaque-single {
     cursor: pointer;
+    position: absolute;
     left: 0;
     top: 0;
-    position: absolute;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 4px;
 }
 
 /* Gradiente escurecedor no fundo */
@@ -144,91 +164,61 @@ header h2 {
 .outras-noticias-1-single h3 {
     position: relative;
     z-index: 1;
-}
-
-.noticia-destaque-single h3 {
-    padding: 10px;
+    padding: 15px;
     color: white;
+    font-size: 1.2em;
+    width: 100%;
 }
 
 .outras-noticias-1 {
+    flex: 1 1 100%;
     display: flex;
-    width: 40%;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .outras-noticias-1-single {
     cursor: pointer;
-    width: 50%;
-    padding-top: 30%;
+    width: 100%;
+    padding-top: 60%;
     background-size: cover;
     background-position: center;
     border: 2px solid #F2F2F2;
     background-color: #347EBF;
     position: relative;
+    overflow: hidden;
+    min-height: 150px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 4px;
 }
 
 .outras-noticias-1-single h3 {
-    padding: 10px;
-    color: white;
+    font-size: 1em;
 }
 
-
-/* Parte final da página */
-
-footer {
-    background-color: #0455BF;
-    color: white;
-    padding: 20px 10px;
-    text-align: center;
-}
-
-footer h1 {
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-footer .contato,
-footer .redes-sociais {
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #82B0D9;
-}
-
-
-/* Jornal informativo */
-
+/* --- Jornal informativo (Layout Principal) --- */
 .container-geral {
-    width: 1450px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 15px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-/* Container com as 2 postagens */
 .conteudo-principal {
-    display: flex;
-    gap: 20px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Cada postagem */
 .postagem {
     background-color: white;
-    flex: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .post {
@@ -238,53 +228,604 @@ footer a:hover {
 .post img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 4px;
 }
 
 .data-post {
-    font-size: 0.8em;
+    font-size: 0.85em;
+    color: #666;
     margin-bottom: 15px;
     display: block;
 }
 
-/* Barra lateral ajustada */
-
-.container-geral {
-    padding-bottom: 20px;
+.post h2 {
+    font-size: 1.8em;
+    color: #0455BF;
+    margin-bottom: 10px;
 }
+
+.post p {
+    margin: 15px 0;
+    text-indent: 25px;
+    text-align: justify;
+    font-size: 0.95em;
+    color: #333;
+}
+
+/* Barra lateral ajustada */
 .barra-lateral {
-    width: 300px;
+    flex: 1 1 100%;
+    min-width: unset;
 }
 
 .conteudo-lateral {
     background-color: white;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .conteudo-lateral h3 {
     background-color: #004aad;
     color: white;
-    padding: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-radius: 4px;
 }
 
 .post-destaque {
-    font-size: 0.8em;
-    padding: 5px;
-    border-bottom: 1px solid rgb(162, 154, 154);
+    font-size: 0.9em;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
 }
 
 .post-destaque:last-child {
-    border: none;
+    border-bottom: none;
 }
 
-a {
-    text-decoration: none;
-    font-weight: bold;
+.post-destaque a {
     color: #004aad;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s ease;
 }
 
-.post p {
-    margin: 10px 0;
-    text-indent: 20px;
+.post-destaque a:hover {
+    color: #0455BF;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #0455BF;
+    color: white;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+footer h1 {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+footer .contato,
+footer .redes-sociais {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #82B0D9;
+}
+
+
+/* --- MEDIA QUERIES RESPONSIVAS --- */
+
+/* Celulares (até 480px) */
+@media (max-width: 480px) {
+    .wraper-header {
+        padding: 15px 10px;
+    }
+
+    header h2,
+    .logo h2 {
+        font-size: 1.5em;
+    }
+
+    .logo p,
+    footer .contato,
+    footer .redes-sociais,
+    footer a,
+    .post p {
+        font-size: 0.85em;
+    }
+
+    .menu-main a {
+        font-size: 0.9em;
+        padding: 8px 10px;
+        display: block;
+        margin: 8px 0;
+    }
+
+    .noticia-destaque {
+        padding-top: 70%;
+    }
+
+    .outras-noticias-1 {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .outras-noticias-1-single {
+        width: 100%;
+        padding-top: 60%;
+    }
+
+    .noticia-destaque-single h3,
+    .outras-noticias-1-single h3 {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .post {
+        padding: 15px;
+    }
+
+    .post h2 {
+        font-size: 1.4em;
+    }
+
+    .conteudo-lateral h3 {
+        font-size: 1em;
+    }
+
+    footer h1 {
+        font-size: 1.2em;
+    }
+}
+
+/* Tablets (481px até 768px) - Para 2 colunas de notícias menores */
+@media (min-width: 481px) and (max-width: 768px) {
+    .noticias-wraper-1 {
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    .noticia-destaque {
+        width: 100%;
+        padding-top: 45%;
+    }
+
+    .outras-noticias-1 {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .outras-noticias-1-single {
+        width: calc(50% - 0.5px);
+        padding-top: 40%;
+    }
+
+    .menu-main a {
+        margin: 0 8px;
+    }
+
+    .container-geral {
+        flex-direction: column;
+        /* Padding para criar espaço em todos os lados */
+        padding: 15px;
+        /* Exemplo: 15px de padding em cima, baixo e laterais */
+    }
+
+    .barra-lateral {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* Telas Maiores (769px até 1200px) - Notícia destaque e outras lado a lado, mas mais contidas */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .noticias-wraper-1 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+    }
+
+    .noticia-destaque {
+        flex: 2 1 65%;
+        padding-top: 30%;
+    }
+
+    .outras-noticias-1 {
+        flex: 1 1 30%;
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    .outras-noticias-1-single {
+        width: 100%;
+        padding-top: 40%;
+    }
+
+    .container-geral {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .conteudo-principal {
+        flex: 3 1 65%;
+    }
+
+    .barra-lateral {
+        flex: 1 1 300px;
+        min-width: 280px;
+    }
+}
+
+/* Telas Super Grandes (acima de 1201px) - Layout original mais espaçoso */
+@media (min-width: 1201px) {
+    .container-geral {
+        width: 1450px;
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 20px 30px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .noticias-wraper-1 {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1px;
+    }
+
+    .noticia-destaque {
+        flex: 2 1 68%;
+        padding-top: 25%;
+    }
+
+    .outras-noticias-1 {
+        flex: 1 1 28%;
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    .outras-noticias-1-single {
+        width: 100%;
+        padding-top: 35%;
+    }
+
+    .container-geral {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .conteudo-principal {
+        flex: 3 1 65%;
+    }
+
+    .barra-lateral {
+        flex: 1 1 300px;
+        min-width: 300px;
+    }
+}
+
+/* Página Campanhas */
+
+.wiki-page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    /* Adicionado para permitir que os itens quebrem para a próxima linha */
+}
+
+.main-content {
+    flex: 3;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 5px;
+    flex-basis: 70%;
+    /* Define uma base para o tamanho, ajustável para responsividade */
+    min-width: 300px;
+    /* Garante que o conteúdo principal não fique muito pequeno */
+}
+
+/* estilos de título e parágrafo do conteúdo principal */
+.main-content h1 {
+    font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 0.2em;
+    color: #333;
+}
+
+.main-content h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.main-content p {
+    margin-bottom: 1em;
+    line-height: 1.6;
     text-align: justify;
+}
+
+/* Sidebar Do Campanhas */
+.wiki-page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.main-content {
+    flex: 3;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 5px;
+    flex-basis: 70%;
+    min-width: 300px;
+}
+
+.main-content h1 {
+    font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 0.2em;
+    color: #333;
+}
+
+.main-content h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.main-content p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+/* Página Campanhas */
+
+.wiki-page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.main-content {
+    flex: 3;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 5px;
+    flex-basis: 70%;
+    min-width: 300px;
+}
+
+.main-content h1 {
+    font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 0.2em;
+    color: #333;
+}
+
+.main-content h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.main-content p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Sidebar Do Campanhas */
+.ship-infobox {
+    border: 1px solid #ccc;
+    width: 300px;
+    height: auto;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    flex-basis: 280px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ship-title {
+    background-color: #d1e2f7;
+    color: #333;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.ship-image-container {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.ship-image-container img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.ship-details {
+    padding: 10px;
+    color: #333;
+    flex-grow: 1;
+}
+
+.ship-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.ship-row:last-child {
+    border-bottom: none;
+}
+
+.ship-label {
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-right: 10px;
+    flex-basis: auto;
+}
+
+.ship-value {
+    text-align: right;
+    flex-grow: 1;
+    word-break: break-word;
+    min-width: 0;
+    flex-basis: auto;
+}
+
+/* Estilos adicionais para caixas genéricas (se usados) */
+.infobox p {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.4em 0;
+    margin: 0;
+    border-top: 1px solid #a2a9b1;
+    background-color: #eaecf0;
+}
+
+.infobox .row {
+    display: table-row;
+}
+
+.infobox .row span {
+    display: table-cell;
+    padding: 0.2em 0.5em;
+    border-bottom: 1px solid #eaecf0;
+}
+
+.infobox .row span:first-child {
+    font-weight: bold;
+}
+
+.infobox .row:last-of-type span {
+    border-bottom: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    .wiki-page {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .main-content {
+        flex-basis: auto;
+        min-width: unset;
+        padding: 15px;
+    }
+
+    .main-content h1 {
+        font-size: 1.8em;
+    }
+
+    .main-content h2 {
+        font-size: 1.3em;
+    }
+
+    .ship-infobox {
+        width: 100%;
+        margin-top: 20px;
+        flex-basis: auto;
+    }
+
+    .ship-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 0;
+    }
+
+    .ship-label {
+        margin-bottom: 5px;
+        margin-right: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .ship-value {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .main-content h1 {
+        font-size: 1.5em;
+    }
+
+    .main-content h2 {
+        font-size: 1.2em;
+    }
+
+    .ship-title {
+        font-size: 1.2em;
+    }
+
+    .ship-row {
+        padding: 6px 0;
+    }
 }
