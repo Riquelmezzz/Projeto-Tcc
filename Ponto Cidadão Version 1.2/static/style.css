@@ -35,7 +35,7 @@ body {
 
 header h2 {
     font-size: 2.2em;
-    color: #222;
+    color: black;
     margin-bottom: 5px;
 }
 
@@ -66,7 +66,7 @@ header h2 span {
 
 .logo p {
     font-size: 0.9em;
-    color: #222;
+    color: black;
     line-height: 1.4;
     text-align: justify;
 }
@@ -123,8 +123,8 @@ header h2 span {
 }
 
 .noticia-destaque {
-    flex: 1 1 100%;
-    padding-top: 60%;
+    flex: 1 1 00%;
+    padding-top: 20%;
     background-color: #0B6BBF;
     border: 2px solid #F2F2F2;
     position: relative;
@@ -242,8 +242,7 @@ header h2 span {
 
 .post h2 {
     font-size: 1.8em;
-    color: #0455BF;
-    margin-bottom: 10px;
+    color: black;
 }
 
 .post p {
@@ -251,7 +250,7 @@ header h2 span {
     text-indent: 25px;
     text-align: justify;
     font-size: 0.95em;
-    color: #333;
+    color: black;
 }
 
 /* Barra lateral ajustada */
@@ -360,7 +359,7 @@ footer a:hover {
     }
 
     .noticia-destaque {
-        padding-top: 70%;
+        padding-top: 15%;
     }
 
     .outras-noticias-1 {
@@ -368,9 +367,10 @@ footer a:hover {
         gap: 15px;
     }
 
+    /* Reduzido de 60% */
     .outras-noticias-1-single {
         width: 100%;
-        padding-top: 60%;
+        padding-top: 18%;/
     }
 
     .noticia-destaque-single h3,
@@ -396,7 +396,7 @@ footer a:hover {
     }
 }
 
-/* Tablets (481px até 768px) - Para 2 colunas de notícias menores */
+/* Tablets (481px até 768px)  */
 @media (min-width: 481px) and (max-width: 768px) {
     .noticias-wraper-1 {
         flex-direction: column;
@@ -405,7 +405,7 @@ footer a:hover {
 
     .noticia-destaque {
         width: 100%;
-        padding-top: 45%;
+        padding-top: 15%;
     }
 
     .outras-noticias-1 {
@@ -418,7 +418,7 @@ footer a:hover {
 
     .outras-noticias-1-single {
         width: calc(50% - 0.5px);
-        padding-top: 40%;
+        padding-top: 18%;
     }
 
     .menu-main a {
@@ -427,9 +427,7 @@ footer a:hover {
 
     .container-geral {
         flex-direction: column;
-        /* Padding para criar espaço em todos os lados */
         padding: 15px;
-        /* Exemplo: 15px de padding em cima, baixo e laterais */
     }
 
     .barra-lateral {
@@ -438,17 +436,17 @@ footer a:hover {
     }
 }
 
-/* Telas Maiores (769px até 1200px) - Notícia destaque e outras lado a lado, mas mais contidas */
+/* Telas Maiores (769px até 1200px) */
 @media (min-width: 769px) and (max-width: 1200px) {
     .noticias-wraper-1 {
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 1px;
     }
 
     .noticia-destaque {
         flex: 2 1 65%;
-        padding-top: 30%;
+        padding-top: 15%;
     }
 
     .outras-noticias-1 {
@@ -459,7 +457,7 @@ footer a:hover {
 
     .outras-noticias-1-single {
         width: 100%;
-        padding-top: 40%;
+        padding-top: 18%;
     }
 
     .container-geral {
@@ -499,7 +497,7 @@ footer a:hover {
 
     .noticia-destaque {
         flex: 2 1 68%;
-        padding-top: 25%;
+        padding-top: 15%;
     }
 
     .outras-noticias-1 {
@@ -510,7 +508,7 @@ footer a:hover {
 
     .outras-noticias-1-single {
         width: 100%;
-        padding-top: 35%;
+        padding-top: 18%;
     }
 
     .container-geral {
@@ -539,7 +537,6 @@ footer a:hover {
     padding: 20px;
     box-sizing: border-box;
     flex-wrap: wrap;
-    /* Adicionado para permitir que os itens quebrem para a próxima linha */
 }
 
 .main-content {
@@ -548,9 +545,7 @@ footer a:hover {
     padding: 20px;
     border-radius: 5px;
     flex-basis: 70%;
-    /* Define uma base para o tamanho, ajustável para responsividade */
     min-width: 300px;
-    /* Garante que o conteúdo principal não fique muito pequeno */
 }
 
 /* estilos de título e parágrafo do conteúdo principal */
@@ -731,34 +726,6 @@ footer a:hover {
     word-break: break-word;
     min-width: 0;
     flex-basis: auto;
-}
-
-/* Estilos adicionais para caixas genéricas (se usados) */
-.infobox p {
-    font-weight: bold;
-    text-align: center;
-    padding: 0.4em 0;
-    margin: 0;
-    border-top: 1px solid #a2a9b1;
-    background-color: #eaecf0;
-}
-
-.infobox .row {
-    display: table-row;
-}
-
-.infobox .row span {
-    display: table-cell;
-    padding: 0.2em 0.5em;
-    border-bottom: 1px solid #eaecf0;
-}
-
-.infobox .row span:first-child {
-    font-weight: bold;
-}
-
-.infobox .row:last-of-type span {
-    border-bottom: none;
 }
 
 /* MEDIA QUERIES */
